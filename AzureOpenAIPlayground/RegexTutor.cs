@@ -18,7 +18,9 @@ namespace RegexTutor
     public static class RegexTutor
     {
         #region key
+
         private static readonly string API_KEY = Environment.GetEnvironmentVariable("API_KEY");
+        private static readonly string AZURE_OPENAI_ENDPOINT = Environment.GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT");
         #endregion
 
         [FunctionName("ExplainRegex")]
@@ -37,7 +39,7 @@ namespace RegexTutor
         public static async Task<string> ExplainRegex(string regEx)
         {
             OpenAIClient client =
-                new OpenAIClient(new Uri("https://payg-we-openai.openai.azure.com/"),
+                new OpenAIClient(new Uri(AZURE_OPENAI_ENDPOINT),
                 new AzureKeyCredential(API_KEY));
 
 
