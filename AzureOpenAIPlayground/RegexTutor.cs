@@ -21,6 +21,7 @@ namespace RegexTutor
 
         private static readonly string API_KEY = Environment.GetEnvironmentVariable("API_KEY");
         private static readonly string AZURE_OPENAI_ENDPOINT = Environment.GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT");
+        
         #endregion
 
         [FunctionName("ExplainRegex")]
